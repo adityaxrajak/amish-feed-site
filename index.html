@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hakla Meme Revealer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    .fade-in {
+      animation: fadeIn 0.5s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex items-center justify-center p-4">
+
+  <div class="w-full max-w-md mx-auto bg-gray-800 rounded-2xl shadow-2xl p-8 text-center">
+    <h1 class="text-3xl font-bold text-cyan-400 mb-2">The Legendary Feed</h1>
+    <p class="text-gray-400 mb-8">Click the button below to reveal Amish's Instagram feed meme.</p>
+
+    <button id="revealButton" class="w-full bg-cyan-500 hover:bg-cyan-600 text-gray-900 font-bold py-3 px-6 rounded-lg text-lg transition-transform transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-cyan-300">
+      Show me Amish's feed!
+    </button>
+
+    <div id="imageContainer" class="mt-8 hidden">
+      <div class="bg-gray-700 p-4 rounded-xl fade-in">
+        <img src="1000092749.png" alt="Hakla Meme Image" class="w-full h-auto rounded-lg" />
+        <p class="text-xs text-gray-500 mt-2">The image you uploaded.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const revealButton = document.getElementById("revealButton");
+    const imageContainer = document.getElementById("imageContainer");
+
+    revealButton.addEventListener("click", () => {
+      if (imageContainer.classList.contains("hidden")) {
+        imageContainer.classList.remove("hidden");
+        revealButton.textContent = "Hide the Feed!";
+      } else {
+        imageContainer.classList.add("hidden");
+       revealButton.textContent = 'Show me Amish\'s feed!';
+
+      }
+    });
+  </script>
+
+</body>
+</html>
